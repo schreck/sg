@@ -27,14 +27,14 @@ public class Motive : MonoBehaviour
     void Update()
     {
 
-        if (Time.time - start_time < 5f)
+        if (Time.time - start_time < 15f)
         {
             a += (.02f)*Random.onUnitSphere;
             v += a * Time.deltaTime;
-            trail.Push(v - 0.5f * a, transform.position);
+            trail.Push(v - 4f * a, transform.position);
         } else
         {
-            trail.End(v - 0.5f * a, transform.position);
+            trail.End(v - 4f * a, transform.position);
         }
         transform.position += v * Time.deltaTime;
 
